@@ -1,45 +1,48 @@
-# Python Demo MCP Server
+# ⚡ Python Starter Function
 
-## Introduction
-This is a demonstration server implementing the Model Context Protocol (MCP) with Server-Sent Events (SSE). It provides a practical example of how to build a server that can handle streaming content production and management.
+A simple starter function. Edit `src/main.py` to get started and create something awesome! 🚀
 
-## Getting Started
+## 🧰 Usage
 
-1. Set up your Python environment
+### GET /ping
 
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+- Returns a "Pong" message.
+
+**Response**
+
+Sample `200` Response:
+
+```text
+Pong
 ```
 
-2. Install the required packages
+### GET, POST, PUT, PATCH, DELETE /
 
-```bash
-uv pip install -r requirements.txt
-```
+- Returns a "Learn More" JSON response.
 
-## Run the server
+**Response**
 
-### Development Environment
-
-```bash
-python server.py
-```
-
-The server will start on http://localhost:8080 by default.
-
-### Production Environment
-
-For deployment on Sevalla, make sure to select Dockerfile based build environment!
-
-## Usage in Cursor
-
-To use this server in Cursor, paste the following in your `mcp.json` file:
+Sample `200` Response:
 
 ```json
-"demo-mcp": {
-  "url": "https://<your-mcp-server-domain>/sse"
+{
+  "motto": "Build like a team of hundreds_",
+  "learn": "https://appwrite.io/docs",
+  "connect": "https://appwrite.io/discord",
+  "getInspired": "https://builtwith.appwrite.io"
 }
 ```
 
-Make sure to replace `<your-mcp-server-domain>` with the actual domain of your server.
+## ⚙️ Configuration
+
+| Setting           | Value                             |
+| ----------------- | --------------------------------- |
+| Runtime           | Python (3.9)                      |
+| Entrypoint        | `src/main.py`                     |
+| Build Commands    | `pip install -r requirements.txt` |
+| Permissions       | `any`                             |
+| Timeout (Seconds) | 15                                |
+
+## 🔒 Environment Variables
+
+No environment variables required.
